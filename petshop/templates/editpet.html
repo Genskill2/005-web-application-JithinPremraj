@@ -17,15 +17,21 @@
   <div class="mb-3">
     <label for = "description" class="form-label">Description</label><br/>
     <textarea rows="10" id="description" class="form-control"
-              name="description">
-      {{description}}
+              name="description">{{description}}
     </textarea>
   </div>
 
   <div class="mb-3">
     <div class="form-check">
+      {%if sold %}
+      <input class="form-check-label" type="checkbox" id="sold" name="sold" value="val" checked>
+      {% else %}
+      <input class="form-check-label" type="checkbox" id="sold" name="sold" value="val">
+      {%endif%}
       <label class="form-check-label" for="sold" > Sold </label>
-      <input type="checkbox" name="s" value="sold">
+      <br>
+      <label class="form-check-date" for="sold-on">Sold on:</label>
+      <input class="form-check-date" type="date" id="sold-on" name="sold-on" value={{sold_raw}}>
     </div>
   </div>
 
